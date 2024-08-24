@@ -25,13 +25,13 @@ jobs:
           python-version: ${{ matrix.python-version }}
           miniconda-version: "latest"
           activate-environment: anaconda-client-env
-          environment-file: clms-env.yml
+          environment-file: erp-env.yml
           auto-activate-base: false
 
       - name: Quality Assurance
         run: |
-          python -m black --check ./clms/
-          python -m flake8 ./clms/ --count --show-source --statistics
+          python -m black --check ./erp/
+          python -m flake8 ./erp/ --count --show-source --statistics
           python -m isort --apply .
 
       # - name: Unit Testing
